@@ -1,0 +1,11 @@
+body { 
+	/*font-size: 62.5%;*/
+	/*background: url("themes/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png") repeat scroll 50% 50% rgb(238, 238, 238);*/
+}
+label, input { display:block; }
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+
+#selectionConnexion { padding:5%;} 
+
+.max_width { width: 100%; }

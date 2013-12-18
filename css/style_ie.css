@@ -1,0 +1,5 @@
+/* Pour que le display: inline-block; fonctionne sous IE7 */
+#navigation li, #categories li, .conteneurImage, .tags li {
+	zoom: 1;
+	display: inline;
+}
