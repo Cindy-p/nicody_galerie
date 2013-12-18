@@ -44,13 +44,16 @@
 	margin: 0 3px 3px 3px; 
 	padding: 0.4em; 
 	padding-left: 1.5em; 
-	height: 18px;
 	cursor: pointer;  
 }
 
 .listImage li .editImage { 
 	position: absolute; 
 	margin-left: 1em;
+}
+
+.listImage .supprimerImage, .listImage .deplacerImage {
+	margin: 2px 0 0 3px;
 }
 
 

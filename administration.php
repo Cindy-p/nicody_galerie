@@ -43,11 +43,12 @@ include("include/connexion.php");
 				echo "
 				<div id='categorie-".$categorie["idcategorie"]."'>
 					<h2><span id='nomCategorie-".$categorie["idcategorie"]."'>".$categorie["nom"]."</span>
-						<img id='supprimerCategorie-".$categorie["idcategorie"]."' src='img/croix.png' class='supprimerCategorie right petite_image curseur'/>
-						<img id='editCategorie-".$categorie["idcategorie"]."' src='img/vert.png' class='editCategorie center petite_image curseur'/>
-					</h2>
+						<img id='supprimerCategorie-".$categorie["idcategorie"]."' src='img/croix.png' class='supprimerCategorie right curseur'/>
+						<img id='editCategorie-".$categorie["idcategorie"]."' src='img/editer.png' class='editCategorie center curseur'/>
+					</h2><br/>
 					<div id='formImage'></div>
 						<button class='nouvelleImage ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>Nouvelle Image</button>
+						<br/><br/>
 						<ul class='listImage'>
 					";
 						// Récupération des images
@@ -55,9 +56,10 @@ include("include/connexion.php");
 						$stmImage = $pdo->prepare($sql);
 						$stmImage->execute(array(":idcategorie" => $categorie["idcategorie"]));
 						while( $image = $stmImage->fetch(PDO::FETCH_ASSOC) ){
-		  					echo "<li id='idImage-".$image["idimage"]."' class='ui-state-default'>
+		  					echo "<li id='idImage-".$image["idimage"]."' class='ui-state-default ui-corner-right'>
+		  							<img class='deplacerImage' src='img/move.png'/>
 		  							<span class='editImage'>".$image["nom"]."</span>
-		  							<img id='supprimerImage-".$image["idimage"]."' src='img/croix.png' class='supprimerImage right petite_image curseur'/>
+		  							<img id='supprimerImage-".$image["idimage"]."' src='img/croix_blanche.png' class='supprimerImage right curseur'/>
 		  						</li>";
 						}
 	  				echo "</ul>
