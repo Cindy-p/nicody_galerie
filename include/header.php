@@ -69,6 +69,7 @@
 				</li>
 				<li>
 					<input id="recherche" type="text" placeholder="Recherche..."/>
+					<ul id="rechercheItems"></ul>
 				</li>
 				<?php
                     }

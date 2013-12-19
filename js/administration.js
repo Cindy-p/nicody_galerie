@@ -69,7 +69,7 @@ $(document).ready(function(){
 	            },
 	            success: function (data){
 	                if( data.msg != "ok"){
-	                	 console.log(data);
+	                	 console.log(data.msg);
 	               } else {
 	            	   $("#nomCategorie-"+idCategorie).replaceWith("<span id='nomCategorie-"+idCategorie+"'>"+nomCategorie+"</span>");
 	            	   $(".categorie-"+idCategorie).html(nomCategorie);
@@ -111,7 +111,7 @@ $(document).ready(function(){
 	            },
 	            success: function (data){
 	                if( data.msg != "ok"){
-	                	 console.log(data);
+	                	 console.log(data.msg);
 	               } else {
 	            	   $(location).attr('href',"administration.php");
 	               }
@@ -151,7 +151,6 @@ $(document).ready(function(){
     	                }
     	            },
     	            success: function (data){
-    	            	console.log(data.msg);
     	            	if( data.msg != "ok"){
     	            		console.log(data.msg);
     	            	}
@@ -232,9 +231,9 @@ $(document).ready(function(){
 					
 						$("#formulaireImage").ajaxSubmit({
 							success: function(data) {
-								var data = $.parseJSON(data);
+							var data = $.parseJSON(data);
 								if( data.msg != "ok"){
-									console.log(data);
+									console.log(data.msg);
 								} else {
 									var post = new Array();
 									post["idCategorie"] = idCategorie ;
