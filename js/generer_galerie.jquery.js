@@ -7,16 +7,7 @@
 					(new Image()).src = this;
 			    });
 			}
-
-			precharger([
-				'img/utilisateur1/noel/noel1.jpg',
-				'img/utilisateur1/noel/noel2.jpg',
-				'img/utilisateur1/noel/noel3.jpg',
-				'img/utilisateur1/chats/chat1.jpg',
-				'img/utilisateur1/chats/chat2.jpg',
-				'img/utilisateur1/chats/chat3.jpg',
-				'http://webinfobazar.com/wp-content/uploads/2012/03/PHP1.png'
-			]);
+			precharger(parametres);
 
 			var nomCategorie = "tous";
 
