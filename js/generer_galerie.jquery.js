@@ -44,7 +44,6 @@
 						precedCategorie = selectCategorie;
 						$(".conteneurImage").hide();
 						nomCategorie = $(this).text().toLowerCase().replace(/[èéêë]/g, "e");
-						// Pb IE au niveau du hasClass (fonctionne avec chaine en dur)
 						if (nomCategorie != "tous") {
 							$(".conteneurImage").each(function() {
 								if ($(this).parent().hasClass(nomCategorie)) {

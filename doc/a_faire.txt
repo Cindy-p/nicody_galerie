@@ -6,4 +6,4 @@ Nico :
 
 Cindy :
 - Terminer CSS administration
-- Régler pb IE catégories
+- Bords arrondis IE
