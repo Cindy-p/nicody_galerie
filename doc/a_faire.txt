@@ -1,0 +1,9 @@
+Nico :
+- Envoyer un tableau de liens des images chargées dans "tous" au plugin jQuery
+- Eviter rechargement de l'autocomplétion à chaque fois que l'on appuie sur les touches haut, bas et entrée
+- Afficher le résultat choisi dans l'input quand on appuie sur Entrée
+
+
+Cindy :
+- Terminer CSS administration
+- Afficher croix dans la pop-up

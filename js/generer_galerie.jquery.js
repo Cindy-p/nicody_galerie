@@ -14,7 +14,8 @@
 				'img/utilisateur1/noel/noel3.jpg',
 				'img/utilisateur1/chats/chat1.jpg',
 				'img/utilisateur1/chats/chat2.jpg',
-				'img/utilisateur1/chats/chat3.jpg'
+				'img/utilisateur1/chats/chat3.jpg',
+				'http://webinfobazar.com/wp-content/uploads/2012/03/PHP1.png'
 			]);
 
 			var nomCategorie = "tous";
@@ -104,7 +105,7 @@
 				// Taille de l'image se situant dans la pop-up
 				$("#popup img").css("width", $(window).width()*0.5);
 
-				// $("#popup").append('<p class="fermer"><img src="img/croix1.png"/></p>');
+				//$("#popup").append('<p class="fermer"><img src="img/croix1.png"/></p>');
 
 				// Comportement des liens précédent et suivant
 				// Lien précédent

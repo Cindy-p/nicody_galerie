@@ -62,10 +62,14 @@ input {
 }
 
 #navigation .lien {
-	padding: 5px;
+	padding: 5px 5px 4px 5px;
 	border-radius: 5px;
 	background-color: #f1f1f1;
 	text-transform: capitalize;
+}
+
+#navigation .selected {
+	background-color: #0eb7ba;
 }
 
 #navigation .lien:hover {
@@ -76,12 +80,17 @@ input {
 	color: #444444;
 }
 
+#navigation .selected a {
+	color: #ffffff;
+}
+
 #navigation .lien:hover a {
 	color: #ffffff;
 }
 
 #navigation li input {
 	padding: 5px;
+	color: #444444;
 }
 
 #logout {
@@ -244,9 +253,15 @@ li #recherche {
 
 #popup .fermer {
 	position: absolute;
-	width: 20px;
+	width: 15px;
+	height: 15px;
 	top: -7px;
 	right: 5px;
+	background-color: #ffffff;
+}
+
+#popup .fermer img {
+	margin-left: 2px;
 }
 
 /* Partie administration */
