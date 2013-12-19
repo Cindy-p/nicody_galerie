@@ -55,6 +55,9 @@ input {
 #navigation li {
 	display: inline-block;
 	text-align: center;
+}
+
+#navigation .lien, #navigation .recherche {
 	margin-left: 7px;
 }
 

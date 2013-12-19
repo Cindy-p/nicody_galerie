@@ -1,86 +1,110 @@
 /* La liste des catégories */
 .ui-tabs-vertical {
-        width: 55em;
+	width: 55em;
 }
 
 .ui-tabs-vertical .ui-tabs-nav {
-        padding: .2em .1em .2em .2em;
-        float: left;
-        width: 12em;
+	padding: .2em .1em .2em .2em;
+	float: left;
+	width: 12em;
 }
 
 .ui-tabs-vertical .ui-tabs-nav li {
-        clear: left;
-        width: 100%;
-        border-bottom-width: 1px !important;
-        border-right-width: 0 !important;
-        margin: 0 -1px .2em 0;
+	clear: left;
+	width: 100%;
+	border-bottom-width: 1px !important;
+	border-right-width: 0 !important;
+	margin: 0 -1px .2em 0;
 }
 
 .ui-tabs-vertical .ui-tabs-nav li a {
-        display:block;
+	display:block;
 }
 .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
-        padding-bottom: 0;
-        border-right-width: 1px;
-        border-right-width: 1px;
+	padding-bottom: 0;
+	border-right-width: 1px;
+	border-right-width: 1px;
 }
 
 .ui-tabs-vertical .ui-tabs-panel {
-        float: right;
-        width: 40em;
-        margin-top: 3px;
+	float: right;
+	width: 40em;
+	margin-top: 3px;
 }
 
 /* La liste d'image */
 .listImage {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 60%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 60%;
 }
 
 .listImage li {
-        margin: 0 3px 3px 3px;
-        padding: 0.4em;
-        padding-left: 1.5em;
-        cursor: pointer;
+	margin: 0 3px 3px 3px;
+	padding: 0.4em;
+	padding-left: 1.5em;
+	cursor: pointer;
 }
 
 .listImage li .editImage {
-        position: absolute;
-        margin-left: 1em;
+	position: absolute;
+	margin-left: 1em;
 }
 
 .listImage .supprimerImage, .listImage .deplacerImage {
-        margin: 2px 0 0 3px;
+	margin: 2px 0 0 3px;
 }
 
 
 #divList {
-        overflow: auto;
+	overflow: auto;
 }
 
 .right {
-        float: right;
+	float: right;
 }
 
 .center {
-        float: center;
+	float: center;
 }
 
 .curseur {
-        cursor: pointer;
+	cursor: pointer;
 }
 
 .petite_image {
-        width: 17px;
+	width: 17px;
 }
 
 h2 {
-        margin: 0;
+	margin: 0;
 }
 
-#rechercheItems > li{
+#rechercheItems {
+	display: none;
+	position: absolute;
+	background: #ffffff;
+	color: #444444;
+	border: 1px solid #bbbbbb;
+	list-style-type: none;
+	margin-left: 30px;
+	padding-left: 0;
+	border-radius: 5px;
+	width: 147px;
+	margin-top: -1px;
+}
+
+#rechercheItems li {
 	display: block;
+	padding: 5px;
+	text-align: left;
+}
+
+#rechercheItems li:hover {
+	background-color: #f1f1f1;
+}
+
+#rechercheItems .focusLi {
+	background-color: #f1f1f1;
 }

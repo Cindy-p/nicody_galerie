@@ -64,10 +64,9 @@
 				<li class="lien">
 					<a href="include/logout.php" >
 						Déconnexion
-						<!-- <img id="logout" src="img/logout.png"/> -->
 					</a>
 				</li>
-				<li>
+				<li class="recherche">
 					<input id="recherche" type="text" placeholder="Recherche..."/>
 					<ul id="rechercheItems"></ul>
 				</li>
