@@ -31,7 +31,7 @@ include("include/connexion.php");
 		<div id="nouvelleCategorie">
 			<label for="nomCategorie">Nom de la Catégorie</label>
 			<input type="text" name="nomCategorie" id="nomCategorie" class="text ui-widget-content ui-corner-all">		
-			<button id="confirmNomCategorie" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Valider</button>
+			<button id="confirmNomCategorie" class="ui-button ui-corner-all ui-button-text-only">Valider</button>
 			<p class="validateTips"></p>
 		</div>
 		<?php 
@@ -47,7 +47,7 @@ include("include/connexion.php");
 						<img id='editCategorie-".$categorie["idcategorie"]."' src='img/editer.png' class='editCategorie center curseur'/>
 					</h2><br/>
 					<div id='formImage'></div>
-						<button class='nouvelleImage ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>Nouvelle Image</button>
+						<button class='nouvelleImage ui-button ui-corner-all ui-button-text-only'>Nouvelle Image</button>
 						<br/><br/>
 						<ul class='listImage'>
 					";
