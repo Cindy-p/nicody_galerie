@@ -14,6 +14,14 @@ $(document).ready(function(){
 	$( "#listCategorie" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
     $( "#listCategorie li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
   
+    // Confirmer la nouvelle catégorie avec un entrée
+    $("#nomCategorie").on("keyup", function(e){
+    	 if(e.keyCode == 13) {
+             $("#confirmNomCategorie").trigger("click");
+         }
+    });
+    
+    
     // Création d'une nouvelle catégorie
     $("#confirmNomCategorie").on("click",function(){ 
     	var estValide = true;
