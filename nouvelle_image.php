@@ -98,7 +98,7 @@
 						// Validation de la dernière transaction
 						$pdo->commit();
 					
-						$msg .= "ok";
+						$msg = "ok";
 						
 					} else {
 						 $msg = "L'image n'est pas enregistrée !";

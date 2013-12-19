@@ -3,7 +3,9 @@
 	if (!isset($_SESSION["utilisateur"]) && !isset($page["no_redirect"])) header("Location: authentification.php"); // Redirection si l'utilisateur ne s'est pas identifié
     include("include/connexion.php");
     include("include/fonction.php");
-
+    
+    if ( isset($_POST["recherche"])) $recherche = htmlspecialchars($_POST["recherche"]);
+    
 ?>
 <div id="corps">
 	<div id="galerie">
@@ -11,20 +13,20 @@
 	
 		// Recherche de l'existance d'image pour cette utilisateur
 		if ( isset($_POST["recherche"])) {
-			$sql = "SELECT COUNT(*) FROM categorie AS c, image AS i WHERE c.idcategorie = i.idcategorie AND c.idutilisateur = :idutilisateur AND ( i.nom LIKE :recherche OR i.description LIKE :recherche OR i.lien LIKE :recherche)";
+			$sql = "SELECT COUNT(*) FROM categorie AS c, image AS i LEFT JOIN tag AS t ON i.idimage = t.idimage WHERE c.idcategorie = i.idcategorie AND c.idutilisateur = :idutilisateur AND ( i.nom LIKE :recherche OR i.description LIKE :recherche OR i.lien LIKE :recherche OR t.libelle LIKE :recherche )";
 			$stm = $pdo->prepare($sql);
-			$stm->execute(array(":idutilisateur" => $_SESSION['idutilisateur'], ":recherche" => "%".$_POST["recherche"]."%" ));
-			$recherche = true;
+			$stm->execute(array(":idutilisateur" => $_SESSION['idutilisateur'], ":recherche" => "%".$recherche."%" ));
+			$boolRecherche = true;
 		} else {
 			$sql = "SELECT COUNT(*) FROM categorie AS c, image AS i WHERE c.idcategorie = i.idcategorie AND c.idutilisateur = :idutilisateur";
 			$stm = $pdo->prepare($sql);
 			$stm->execute(array(":idutilisateur" => $_SESSION['idutilisateur']));
-			$recherche = false;
+			$boolRecherche = false;
 		}
 		
 		$row = $stm->fetch(PDO::FETCH_ASSOC);
 		if( $row["COUNT(*)"] == 0 ){
-			if ( $recherche ){
+			if ( $boolRecherche ){
 				echo "AUCUN RESULTAT POUR CETTE RECHERCHE !";
 			} else {
 				echo "METS LE MESSAGE QUI TE PLAIT !";
@@ -33,9 +35,10 @@
 			
 			if ( isset($_POST["recherche"])) {
 				// Création des catégories
-				$sql = "SELECT DISTINCT(c.nom) FROM categorie AS c LEFT JOIN image AS i ON c.idcategorie = i.idcategorie WHERE i.nom IS NOT NULL AND idutilisateur = :idutilisateur AND ( i.nom LIKE :recherche OR i.description LIKE :recherche OR i.lien LIKE :recherche)";
+				$sql = "SELECT DISTINCT(c.nom) FROM categorie AS c, image AS i LEFT JOIN tag AS t ON i.idimage = t.idimage WHERE c.idcategorie = i.idcategorie AND i.nom IS NOT NULL AND idutilisateur = :idutilisateur AND ( i.nom LIKE :recherche OR i.description LIKE :recherche OR i.lien LIKE :recherche OR t.libelle LIKE :recherche )";
 				$stm = $pdo->prepare($sql);
-				$stm->execute(array(":idutilisateur" => $_SESSION['idutilisateur'], ":recherche" => "%".$_POST["recherche"]."%" ));
+				$stm->execute(array(":idutilisateur" => $_SESSION['idutilisateur'], ":recherche" => "%".$recherche."%" ));
+				
 			} else {
 				// Création des catégories
 				$sql = "SELECT DISTINCT(c.nom) FROM categorie AS c LEFT JOIN image AS i ON c.idcategorie = i.idcategorie WHERE i.nom IS NOT NULL AND idutilisateur = :idutilisateur ";
@@ -61,7 +64,7 @@
 				if ( isset($_POST["recherche"])) {
 					$sql = "SELECT i.nom AS nom, i.description AS description, i.idimage AS idimage, i.lien AS lien FROM image as i LEFT JOIN tag AS t ON i.idimage = t.idimage WHERE idcategorie = :idcategorie AND ( nom LIKE :recherche OR description LIKE :recherche OR lien LIKE :recherche OR t.libelle LIKE :recherche) GROUP BY idimage ORDER BY ordre ASC" ;
 					$stmImage = $pdo->prepare($sql);
-					$stmImage->execute(array(":idcategorie" => $categorie["idcategorie"], ":recherche" => "%".$_POST["recherche"]."%" ));
+					$stmImage->execute(array(":idcategorie" => $categorie["idcategorie"], ":recherche" => "%".$recherche."%" ));
 				} else {
 					$sql = "SELECT * FROM image WHERE idcategorie = :idcategorie ORDER BY ordre ASC";
 					$stmImage = $pdo->prepare($sql);

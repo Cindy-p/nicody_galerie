@@ -5,6 +5,8 @@ $(document).ready(function(){
 	
 	// Recherche dans les images
 	$("#recherche").on("keyup",function(){
+
+		$("#rechercheItems").empty();
 		
 		// Partie affichage des résultats
 		if ($(this).val() == ""){
@@ -31,7 +33,7 @@ $(document).ready(function(){
 		}
 		
 		// Partie autocompletion
-		if ( $(this).val().length > 3 ){
+		if ( $(this).val().length > 2 ){
 			$.ajax({
 	            type: "GET",
 	            url: "recherche.php",
@@ -44,13 +46,16 @@ $(document).ready(function(){
 	                }
 	            },
 	            success: function (data){
+	   
 	            	
-	            	if ( data.length > 1){
-		            	var string = "";
-		            	data.forEach(function(item){
-		            		string += "<li class='curseur autocompleteItem'>"+item+"</li>";
-		            	});
-		            	$("#rechercheItems").append(string);
+	            	if( data.length > 0){
+	            		if (  data[0] != $("#recherche").val() ){
+			            	var string = "";
+			            	data.forEach(function(item){
+			            		string += "<li class='curseur autocompleteItem'>"+item+"</li>";
+			            	});
+			            	$("#rechercheItems").append(string);
+	            		}
 	            	}
 	            }
 	        });

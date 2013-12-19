@@ -8,7 +8,7 @@
     $listImage = array();
     
 	// Récupération des images
-	$sql = "SELECT i.nom AS nom, i.description AS description, i.idimage AS idimage, i.lien AS lien FROM image as i LEFT JOIN tag AS t ON i.idimage = t.idimage WHERE ( description LIKE :recherche OR lien LIKE :recherche OR t.libelle LIKE :recherche OR nom LIKE :recherche ) GROUP BY idimage ORDER BY ordre ASC" ;
+	$sql = "SELECT i.nom AS nom, i.description AS description, i.idimage AS idimage, i.lien AS lien FROM image as i LEFT JOIN tag AS t ON i.idimage = t.idimage WHERE ( description LIKE :recherche OR lien LIKE :recherche OR t.libelle LIKE :recherche OR nom LIKE :recherche ) GROUP BY idimage ORDER BY ordre ASC LIMIT 10" ;
 	$stmImage = $pdo->prepare($sql);
 	$stmImage->execute(array(":recherche" => "%".$recherche."%" ));
 	
