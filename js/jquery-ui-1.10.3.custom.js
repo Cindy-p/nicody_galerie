@@ -12072,7 +12072,7 @@ $.widget( "ui.tabs", {
 		}
 
 		function show() {
-			eventData.newTab.closest( "li" ).addClass( "ui-tabs-active ui-state-active" );
+			eventData.newTab.closest( "li" ).addClass( "ui-tabs-active" );
 
 			if ( toShow.length && that.options.show ) {
 				that._show( toShow, that.options.show, complete );
@@ -12085,11 +12085,11 @@ $.widget( "ui.tabs", {
 		// start out by hiding, then showing, then completing
 		if ( toHide.length && this.options.hide ) {
 			this._hide( toHide, this.options.hide, function() {
-				eventData.oldTab.closest( "li" ).removeClass( "ui-tabs-active ui-state-active" );
+				eventData.oldTab.closest( "li" ).removeClass( "ui-tabs-active" );
 				show();
 			});
 		} else {
-			eventData.oldTab.closest( "li" ).removeClass( "ui-tabs-active ui-state-active" );
+			eventData.oldTab.closest( "li" ).removeClass( "ui-tabs-active" );
 			toHide.hide();
 			show();
 		}

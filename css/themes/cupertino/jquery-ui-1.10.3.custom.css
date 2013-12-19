@@ -761,6 +761,9 @@ button.ui-button::-moz-focus-inner {
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
 	/*margin-bottom: -1px;*/
 	padding-bottom: 1px;
+	background-color: #ffffff;
+	border: 1px solid #ececec;
+	color: #444444;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
 .ui-tabs .ui-tabs-nav li.ui-state-disabled a,
@@ -835,8 +838,8 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-	/*border: 1px solid #bbbbbb;
-	background-color: #f1f1f1;*/
+	border: 1px solid #bbbbbb;
+	background-color: #f1f1f1;
 	color: #444444;
 	padding: 5px;
 }

@@ -29,6 +29,7 @@
 .ui-tabs-vertical .ui-tabs-panel {
 	float: right;
 	width: 40em;
+	min-height: 500px;
 	margin-top: 3px;
 }
 

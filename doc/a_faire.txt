@@ -6,4 +6,4 @@ Nico :
 
 Cindy :
 - Terminer CSS administration
-- Afficher croix dans la pop-up
+- Régler pb IE catégories
