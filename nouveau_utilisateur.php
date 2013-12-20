@@ -5,7 +5,6 @@
 	
 	// Récupération des variables
 	$login = htmlentities($_POST["login"]);
-    //$email = htmlentities($_POST["email"]);
     $password = htmlentities($_POST["password"]);
 
     // Vérification du contenu
@@ -14,7 +13,6 @@
     $pattern_password = '/^([0-9a-zA-Z])+$/';
     
     if( preg_match($pattern_login,$login,$matches,PREG_OFFSET_CAPTURE) ){
-       // if( preg_match($pattern_email,$email,$matches,PREG_OFFSET_CAPTURE) ){
         if( 1 == 1 ){
          
             if( preg_match($pattern_password,$password,$matches,PREG_OFFSET_CAPTURE) ){
@@ -28,12 +26,13 @@
                     $stm = $pdo->prepare($sql);
                     $stm->execute(array(":login" => $login, ":password" => $password ));
                     
-                    // Validation de la transaction
-                    $pdo->commit();                    
-                    
                     // Création de la session utilisateur
                     $_SESSION["utilisateur"] = $login;
                     $_SESSION["idutilisateur"] = $pdo->lastInsertId();
+                    
+                     // Validation de la transaction
+                    $pdo->commit();    
+                    
                     if ( !mkdir(dirname(__FILE__)."/utilisateurs/".$login,0700)){
                     	$msg = "Le dossier ne s'est pas créé !";
                     } else {

@@ -46,7 +46,7 @@ $(document).ready(function(){
 	            },
 	            success: function (data){
 	                if( data.msg != "ok"){
-	                	 console.log(data);
+	                	 alert(data.msg);
 	               } else {
 	            	   $(location).attr('href',"administration.php");
 	               }
@@ -77,13 +77,11 @@ $(document).ready(function(){
 	            },
 	            success: function (data){
 	                if( data.msg != "ok"){
-	                	 console.log(data.msg);
+	                	alert(data.msg);
 	               } else {
 	            	   $("#nomCategorie-"+idCategorie).replaceWith("<span id='nomCategorie-"+idCategorie+"'>"+nomCategorie+"</span>");
 	            	   $(".categorie-"+idCategorie).html(nomCategorie);
-	            	   console.log(bouton.attr("class"));
 	            	   bouton.removeClass("encours");
-	            	   console.log(bouton.attr("class"));
 	               }
 	            }
 	        });
@@ -119,7 +117,7 @@ $(document).ready(function(){
 	            },
 	            success: function (data){
 	                if( data.msg != "ok"){
-	                	 console.log(data.msg);
+	                	 alert(data.msg);
 	               } else {
 	            	   $(location).attr('href',"administration.php");
 	               }
@@ -160,7 +158,7 @@ $(document).ready(function(){
     	            },
     	            success: function (data){
     	            	if( data.msg != "ok"){
-    	            		console.log(data.msg);
+    	            		alert(data.msg);
     	            	}
     	            }
     	        });
@@ -193,7 +191,7 @@ $(document).ready(function(){
 							success: function(data) {
 								var data = $.parseJSON(data);
 								if( data.msg != "ok"){
-									console.log(data);
+									$("#text").html(data.msg);
 								} else {
 									var post = new Array();
 									post["idCategorie"] = idCategorie ;
@@ -241,7 +239,7 @@ $(document).ready(function(){
 							success: function(data) {
 							var data = $.parseJSON(data);
 								if( data.msg != "ok"){
-									console.log(data.msg);
+									 $("#text").html(data.msg);
 								} else {
 									var post = new Array();
 									post["idCategorie"] = idCategorie ;
@@ -283,8 +281,9 @@ $(document).ready(function(){
                 }
             },
             success: function (data){
+            	console.log(data);
               if( data.msg != "ok"){
-                	 console.log(data.msg);
+                	 alert(data.msg);
                } else {
 					var post = new Array();
 					post["idCategorie"] = idCategorie;

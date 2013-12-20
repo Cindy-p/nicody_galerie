@@ -88,7 +88,8 @@
 						$listTags = explode(" ", $tags);
 						$idImage = $pdo->lastInsertId();
 						for($i = 0; $i < count($listTags); ++$i){
-							if ( $listTags[$i] != " "){
+							$listTags[$i] = str_replace(" ", "", $listTags[$i]);
+							if ( $listTags[$i] != " " && $listTags[$i] != ""){
 								$sql = "INSERT INTO tag (libelle,idimage) VALUES (:libelle,:idimage)";
 								$stm = $pdo->prepare($sql);
 								$stm->execute(array(":libelle" => $listTags[$i], ":idimage" => $idImage));

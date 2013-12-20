@@ -64,7 +64,7 @@
 				else { ?>
 					<li class="lien">
 				<?php } ?>
-					<a href="administration.php"><?php echo $_SESSION["utilisateur"]; ?></a>
+					<a href="administration.php">Admin</a>
 					<!--<ul id="menuAdministration">
 						<li><a href="#">Gestion Utilisateur</a></li>
 						<li><a href="#">Gestion Galerie</a></li>

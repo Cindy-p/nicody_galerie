@@ -5,7 +5,7 @@
 	
 	if ( isset($_GET["idCategorie"]) && !isset($_GET["idImage"])){
 		echo "
-		<p id='textNouveau'  class='validateTips'>Tous les champs sont requis !</p>
+		<p id='text'  class='validateTips'>Tous les champs sont requis !</p>
 		<form id='formulaireImage' method='POST' action='nouvelle_image.php' enctype='multipart/form-data'>
 			<fieldset>
 				<label for='nom'>Nom</label>
@@ -38,7 +38,7 @@
 		}
 		
 		echo "
-		<p id='textNouveau'  class='validateTips'>Tous les champs sont requis !</p>
+		<p id='text'  class='validateTips'>Tous les champs sont requis !</p>
 		<form id='formulaireImage' method='POST' action='modification_image.php' enctype='multipart/form-data'>
 			<fieldset>
 				<label for='nom'>Nom</label>
