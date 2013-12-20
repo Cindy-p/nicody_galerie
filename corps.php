@@ -27,9 +27,9 @@
 		$row = $stm->fetch(PDO::FETCH_ASSOC);
 		if( $row["COUNT(*)"] == 0 ){
 			if ( $boolRecherche ){
-				echo "AUCUN RESULTAT POUR CETTE RECHERCHE !";
+				echo "Il n'y a aucun résultat pour votre recherche.";
 			} else {
-				echo "METS LE MESSAGE QUI TE PLAIT !";
+				echo 'Vous n\'avez aucune image dans votre galerie. <a href="administration.php">Cliquez ici</a> pour en ajouter.';
 			}
 		} else {
 			

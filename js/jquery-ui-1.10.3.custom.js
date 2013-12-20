@@ -11861,7 +11861,7 @@ $.widget( "ui.tabs", {
 			.attr( "role", "tablist" );
 
 		this.tabs = this.tablist.find( "> li:has(a[href])" )
-			.addClass( "ui-state-default ui-corner-top" )
+			.addClass( "ui-corner-top" )
 			.attr({
 				role: "tab",
 				tabIndex: -1

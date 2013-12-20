@@ -849,7 +849,18 @@ body .ui-tooltip {
 	color: #444444;
 	text-decoration: none;
 }
-.ui-state-hover,
+.ui-tabs-nav .ui-state-hover {
+	background: #444444;
+	color: #ffffff;
+}
+
+.ui-dialog-buttonset .ui-state-hover {
+	border: 1px solid #0eb7ba;
+	background: #0eb7ba;
+	color: #ffffff;
+}
+
+/*.ui-state-hover
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
 .ui-state-focus,
@@ -858,14 +869,14 @@ body .ui-tooltip {
 	border: 1px solid #0eb7ba;
 	background: #0eb7ba;
 	color: #ffffff;
-}
-.ui-state-hover a,
+}*/
+/*.ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
 	color: #ffffff;
 	text-decoration: none;
-}
+}*/
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
