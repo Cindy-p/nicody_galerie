@@ -300,7 +300,6 @@ $(document).ready(function(){
                 }
             },
             success: function (data){
-            	console.log(data);
               if( data.msg != "ok"){
                 	 alert(data.msg);
                } else {
@@ -333,6 +332,8 @@ $(document).ready(function(){
 	function checkLength( o, n, min, max ) {
 		if ( o.val().length > max || o.val().length < min ) {
 			$("#text").addClass( "ui-state-error" );
+			$("#textNouveau").addClass( "ui-state-error" );
+			$("#textAncien").addClass( "ui-state-error" );
 			o.addClass( "ui-state-error" );
 			updateTips( "La taille de " + n + " doit être entre " + min + " et " + max + "." );
 			return false;
@@ -345,6 +346,8 @@ $(document).ready(function(){
 	function checkRegexp( o, regexp, n ) {
 		if ( !( regexp.test( o.val() ) ) ) {
 			$("#text").addClass( "ui-state-error" );
+			$("#textNouveau").addClass( "ui-state-error" );
+			$("#textAncien").addClass( "ui-state-error" );
 			o.addClass( "ui-state-error" );
 			updateTips( n );
 			return false;

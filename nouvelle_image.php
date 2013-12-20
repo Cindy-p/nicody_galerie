@@ -41,32 +41,36 @@
 					$stm = $pdo->prepare($sql);
 					$stm->execute(array(":idCategorie" => $idCategorie));
 					$rowCategorie = $stm->fetch(PDO::FETCH_ASSOC);
+					$nomCategorie = format_dossier($rowCategorie['nom']);
 					
 					// Enregistrement du fichier
 					$nb = 1;
 					$fichier = "";
 					$fichierFinal = $_FILES["file"]["name"];
-					if (file_exists(dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".format_dossier($rowCategorie['nom'])."/".$_FILES["file"]["name"]))
+					
+					$fichierFinal = iconv('UTF-8', 'CP1252', $fichierFinal); // Encodage pour le fichier
+					$cheminTotal = dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".$nomCategorie."/".$fichierFinal;
+					
+					
+					if (file_exists($cheminTotal))
 					{
-						$temp = explode(".", $_FILES["file"]["name"]);
+						$temp = explode(".", $fichierFinal);
 						$nbPart = count($temp);
 						$fichier = $temp[0];
 						for( $i = 1 ; $i < $nbPart-1 ; ++$i){
 							$fichier = $fichier.".".$temp[$i];
 						}
 						$fichierFinal = $fichier."(".$nb.").".$extension;
-						while( file_exists(dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".$rowCategorie['nom']."/".$fichierFinal) ){
+						while( file_exists(dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".$nomCategorie."/".$fichierFinal) ){
 							++$nb;
 							$fichierFinal = $fichier."(".$nb.").".$extension;
 						}
 					}
 					
-					$fichierFinal = iconv('UTF-8', 'CP1252', $fichierFinal); // Encodage pour le fichier
-					$cheminTotal = dirname(__FILE__).'/utilisateurs/'.$_SESSION["utilisateur"].'/'.format_dossier($rowCategorie["nom"]).'/'.$fichierFinal;
+					$cheminTotal = dirname(__FILE__).'/utilisateurs/'.$_SESSION["utilisateur"].'/'.$nomCategorie.'/'.$fichierFinal;
 					// Vérification de l'intégration de l'image dans notre système de fichier
 					if ( move_uploaded_file($_FILES["file"]["tmp_name"],$cheminTotal)){
 						// Création de l'image dans la base
-						$fichierFinal = iconv('CP1252','UTF-8', $fichierFinal); // Retour encodage pour la base
 						
 						// Récupérer l'image précédente pour avoir l'ordre de l'image
 						$sql = "SELECT * FROM image WHERE idcategorie = :idCategorie ORDER BY ordre DESC";
@@ -80,6 +84,7 @@
 							$ordre = intval($rowImage["ordre"])+1;
 						}
 						
+						$fichierFinal = iconv('CP1252','UTF-8', $fichierFinal); // Retour encodage pour la base
 						$sql = "INSERT INTO image (nom,description,lien,ordre,idcategorie) VALUES (:nom,:description,:lien,:ordre,:idCategorie)";
 						$stm = $pdo->prepare($sql);
 						$stm->execute(array(":nom" => $nom, ":description" => $description, ":lien" => $fichierFinal, ":ordre" => $ordre, "idCategorie" => $idCategorie));
