@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 20 Décembre 2013 à 09:47
+-- Généré le: Ven 20 Décembre 2013 à 11:03
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -33,7 +33,14 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `nom` varchar(30) DEFAULT NULL,
   `idutilisateur` int(11) NOT NULL,
   PRIMARY KEY (`idcategorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `categorie`
+--
+
+INSERT INTO `categorie` (`idcategorie`, `nom`, `idutilisateur`) VALUES
+(1, 'espace', 1);
 
 -- --------------------------------------------------------
 
@@ -49,7 +56,14 @@ CREATE TABLE IF NOT EXISTS `image` (
   `ordre` int(3) NOT NULL,
   `idcategorie` int(11) NOT NULL,
   PRIMARY KEY (`idimage`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `image`
+--
+
+INSERT INTO `image` (`idimage`, `nom`, `description`, `lien`, `ordre`, `idcategorie`) VALUES
+(1, 'Monde', 'Le monde en couleur', 'Spaceé.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +76,14 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `libelle` varchar(30) DEFAULT NULL,
   `idimage` int(11) NOT NULL,
   PRIMARY KEY (`idtag`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `tag`
+--
+
+INSERT INTO `tag` (`idtag`, `libelle`, `idimage`) VALUES
+(1, 'couleur', 1);
 
 -- --------------------------------------------------------
 
@@ -75,7 +96,14 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `login` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idutilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`idutilisateur`, `login`, `password`) VALUES
+(1, 'test', 'c564752a1e971d9e2d09d9cba750a13c');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
