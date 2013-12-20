@@ -2,7 +2,7 @@
     header('Content-Type: text/html; charset=utf-8');	// Encodage UTF-8 PHP
     try
 {
-    $pdo = new PDO('mysql:host=localhost;dbname=nicody_galerie', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=nicody_galerie', 'nicody_galerie', 'nicody_galerie');
     //$pdo = new PDO('mysql:host=localhost;dbname=nicody_galerie', 'root', 'root');
 	$pdo->query("SET NAMES UTF8");
 }
