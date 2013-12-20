@@ -54,7 +54,7 @@
 			echo "</ul><div>";
 			
 			// Création des catégories 
-			$sql = "SELECT c.nom AS nom, c.idcategorie AS idcategorie FROM categorie AS c LEFT JOIN image AS i ON c.idcategorie = i.idcategorie WHERE i.nom IS NOT NULL AND idutilisateur = :idutilisateur ";
+			$sql = "SELECT c.nom AS nom, c.idcategorie AS idcategorie FROM categorie AS c LEFT JOIN image AS i ON c.idcategorie = i.idcategorie WHERE i.nom IS NOT NULL AND idutilisateur = :idutilisateur GROUP BY nom ORDER BY ordre ASC";
 			$stmCategorie = $pdo->prepare($sql);
 			$stmCategorie->execute(array(":idutilisateur" => $_SESSION["idutilisateur"]));
 			while( $categorie = $stmCategorie->fetch(PDO::FETCH_ASSOC) ){
