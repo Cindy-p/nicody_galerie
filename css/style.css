@@ -20,9 +20,9 @@ input {
 	border-radius: 5px;
 }
 
-/*input:hover, input:active {
-	border: 1px solid #0eb7ba;
-}*/
+a img {
+	border: 0;
+}
 
 /* Entête */
 
@@ -257,7 +257,6 @@ li #recherche {
 	height: 15px;
 	right: 12px;
 	bottom: 2px;
-	background-color: #ffffff;
 }
 
 #popup .fermer img {
@@ -286,6 +285,7 @@ li #recherche {
 	margin-bottom: 5px;
 	font-weight: bold;
 	vertical-align: top;
+	padding-top: 1px;
 }
 
 #formulaireImage input[type=text], #formulaireImage #file, #formulaireImage textarea {
@@ -298,6 +298,8 @@ li #recherche {
 }
 
 #formulaireImage textarea {
-	width: 217px;
+	width: 207px;
 	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 5px;
 }
