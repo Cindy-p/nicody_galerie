@@ -182,8 +182,8 @@ $(document).ready(function(){
 			width: 350,
 			modal: true,
 			buttons: {
-				"Création de votre image":{
-	                text: "Création de votre image",
+				"Ajouter":{
+	                text: "Ajouter",
 	                id: "creationImage",
 	                click: function() {
 			

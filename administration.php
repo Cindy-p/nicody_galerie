@@ -29,8 +29,9 @@ include("include/connexion.php");
 			?>
 		</ul>
 		<div id="nouvelleCategorie">
-			<label for="nomCategorie">Nom de la catégorie</label>
-			<input type="text" name="nomCategorie" id="nomCategorie" class="text ui-widget-content ui-corner-all"><br/>
+			<label for="nomCategorie">Nom de la catégorie *</label>
+			<input type="text" name="nomCategorie" id="nomCategorie" class="text ui-widget-content ui-corner-all">
+			<br/>
 			<button id="confirmNomCategorie" class="ui-button ui-corner-all ui-button-text-only">Valider</button>
 			<p class="validateTips"></p>
 		</div>
@@ -47,7 +48,7 @@ include("include/connexion.php");
 						<img id='editCategorie-".$categorie["idcategorie"]."' src='img/editer.png' class='editCategorie center curseur'/>
 					</h2><br/>
 					<div id='formImage'></div>
-						<button class='nouvelleImage ui-button ui-corner-all ui-button-text-only'>Nouvelle Image</button>
+						<button class='nouvelleImage ui-button ui-corner-all ui-button-text-only'>Nouvelle image</button>
 						<br/><br/>
 						<ul class='listImage'>
 					";
