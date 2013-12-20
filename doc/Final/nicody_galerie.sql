@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 20 Décembre 2013 à 08:36
+-- Généré le: Ven 20 Décembre 2013 à 09:47
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `nom` varchar(30) DEFAULT NULL,
   `idutilisateur` int(11) NOT NULL,
   PRIMARY KEY (`idcategorie`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `ordre` int(3) NOT NULL,
   `idcategorie` int(11) NOT NULL,
   PRIMARY KEY (`idimage`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -74,9 +74,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `idutilisateur` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf32 NOT NULL,
   PRIMARY KEY (`idutilisateur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

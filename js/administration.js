@@ -187,18 +187,36 @@ $(document).ready(function(){
 	                id: "creationImage",
 	                click: function() {
 			
-						$("#formulaireImage").ajaxSubmit({
-							success: function(data) {
-								var data = $.parseJSON(data);
-								if( data.msg != "ok"){
-									$("#text").html(data.msg);
-								} else {
-									var post = new Array();
-									post["idCategorie"] = idCategorie ;
-									locationPost("administration.php", post );
-								}
-							}
-			            });
+						var estValide = true;
+				    	var nom = $("#nom");
+				    	tips = $(".validateTips");
+				    	
+				    	estValide = estValide && checkLength( nom, "nom de la catégorie", 1, 255 );
+				    	if ( estValide ){
+					    	if ( $("#file").val() == "" ) estValide = false;
+					    	
+					    	if ( estValide ){
+				
+								$("#formulaireImage").ajaxSubmit({
+									success: function(data) {
+										var data = $.parseJSON(data);
+										if( data.msg != "ok"){
+								    		$("#text").addClass("ui-state-error");
+											$("#text").html(data.msg);
+										} else {
+											var post = new Array();
+											post["idCategorie"] = idCategorie ;
+											locationPost("administration.php", post );
+										}
+									}
+					            });
+					    	} else {
+					    		$("#nom").removeClass("ui-state-error");
+					    		$("#file").addClass("ui-state-error");
+					    		$("#text").addClass("ui-state-error");
+					    		$("#text").html("Veuillez mettre une image.");
+					    	}
+				    	}
 					}
 				},
 				Annuler: function() {
@@ -239,7 +257,8 @@ $(document).ready(function(){
 							success: function(data) {
 							var data = $.parseJSON(data);
 								if( data.msg != "ok"){
-									 $("#text").html(data.msg);
+									$("#text").addClass("ui-state-error");
+									$("#text").html(data.msg);
 								} else {
 									var post = new Array();
 									post["idCategorie"] = idCategorie ;
@@ -313,6 +332,7 @@ $(document).ready(function(){
 	// Vérification de la longueur d'un élément
 	function checkLength( o, n, min, max ) {
 		if ( o.val().length > max || o.val().length < min ) {
+			$("#text").addClass( "ui-state-error" );
 			o.addClass( "ui-state-error" );
 			updateTips( "La taille de " + n + " doit être entre " + min + " et " + max + "." );
 			return false;
@@ -324,6 +344,7 @@ $(document).ready(function(){
 	// Vérification du format d'un élément
 	function checkRegexp( o, regexp, n ) {
 		if ( !( regexp.test( o.val() ) ) ) {
+			$("#text").addClass( "ui-state-error" );
 			o.addClass( "ui-state-error" );
 			updateTips( n );
 			return false;
