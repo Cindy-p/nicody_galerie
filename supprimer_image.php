@@ -22,8 +22,8 @@
 		$sql = "SELECT * FROM categorie WHERE idcategorie = :idcategorie" ;
 		$stm = $pdo->prepare($sql);
 		$stm->execute(array(":idcategorie" => $idCategorie ));
-		$rowImage = $stm->fetch(PDO::FETCH_ASSOC);
-		$nomCategorie = format_dossier($rowImage["nom"]);
+		$rowCategorie = $stm->fetch(PDO::FETCH_ASSOC);
+		$nomCategorie = format_dossier($rowCategorie["nom"]);
 		
 		// Suppression des tags de l'image en base 
 		$sql = "DELETE FROM tag WHERE idimage = :idimage" ;
@@ -39,10 +39,11 @@
 		$pdo->commit();
 	
 		// Suppresion de l'image en vrai
-		$supprimerImage = dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".format_dossier($nomCategorie)."/".$nomImage;
-		
-		if ( !unlink($supprimerImage)){
-			$msg = "L'image ne s'est pas supprimée !".$supprimerImage;
+		$fichierFinal = iconv('UTF-8', 'CP1252', $nomImage); // Encodage pour le fichier
+		$cheminTotal = dirname(__FILE__).'/utilisateurs/'.$_SESSION["utilisateur"].'/'.$nomCategorie.'/'.$fichierFinal;
+					
+		if ( !unlink($cheminTotal)){
+			$msg = "L'image ne s'est pas supprimée ! ".$cheminTotal;
 		} else {
 			$msg = "ok";
 		}

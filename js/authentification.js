@@ -28,6 +28,7 @@ $(document).ready(function(){
 	// Vérification de la longueur d'un élément
 	function checkLength( o, n, min, max ) {
 		if ( o.val().length > max || o.val().length < min ) {
+			$("#text").addClass( "ui-state-error" );
 			o.addClass( "ui-state-error" );
 			updateTips( "La taille de " + n + " doit être entre " + min + " et " + max + "." );
 			return false;
@@ -39,6 +40,7 @@ $(document).ready(function(){
 	// Vérification du format d'un élément
 	function checkRegexp( o, regexp, n ) {
 		if ( !( regexp.test( o.val() ) ) ) {
+			$("#text").addClass( "ui-state-error" );
 			o.addClass( "ui-state-error" );
 			updateTips( n );
 			return false;
@@ -90,6 +92,7 @@ $(document).ready(function(){
                             success: function (data){
                             	console.log(data);
                                 if( data.msg != "ok"){
+    					    		$("#textNouveau").addClass("ui-state-error");
                                     $("#textNouveau").text(data.msg);
                                } else {
                                     $(location).attr('href',"index.php");
@@ -161,6 +164,7 @@ $(document).ready(function(){
                             success: function (data){
                             	console.log(data);
                                 if( data.msg != "ok"){
+    					    		$("#textAncien").addClass("ui-state-error");
                                     $("#textAncien").text(data.msg);
                                } else {
                                     $(location).attr('href',"index.php");
