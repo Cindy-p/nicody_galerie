@@ -182,9 +182,9 @@ $(document).ready(function(){
 			width: 350,
 			modal: true,
 			buttons: {
-				"Ajouter":{
+				"Ajouter un Image":{
 	                text: "Ajouter",
-	                id: "creationImage",
+	                id: "formImage",
 	                click: function() {
 			
 						var estValide = true;
@@ -250,7 +250,7 @@ $(document).ready(function(){
 			buttons: {
 				"Modification de votre image":{
 	                text: "Modification de votre image",
-	                id: "modifierImage",
+	                id: "formulaireModifImage",
 	                click: function() {
 					
 						$("#formulaireImage").ajaxSubmit({

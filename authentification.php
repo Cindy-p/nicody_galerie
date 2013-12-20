@@ -29,6 +29,8 @@
 				</fieldset>
 			</form>
 		
+		</div>
+		
 		<div id="formulaireDialogAncien" title="Connexion à votre compte">
 			<p id="textAncien" class="validateTips"></p>
 			<form>
@@ -43,8 +45,6 @@
 					<input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
 				</fieldset>
 			</form>
-		</div>
-		
 		</div>
 		
 <?php
