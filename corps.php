@@ -72,7 +72,7 @@
 				}
 				while( $image = $stmImage->fetch(PDO::FETCH_ASSOC) ){
 					echo "	<div>
-								<img src='utilisateurs/".$_SESSION['utilisateur']."/".format_dossier($categorie['nom'])."/".$image['lien']."' alt=''/>
+								<img class='precharge' src='utilisateurs/".$_SESSION['utilisateur']."/".format_dossier($categorie['nom'])."/".$image['lien']."' alt=''/>
 								<div>
 									<span>".$image['nom']."</span>
 									<p>".$image['description']."</p>";

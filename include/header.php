@@ -42,18 +42,28 @@
 	<body>
 	    <div id="entete">
 			<div id="nomSite">
-				<a href="index.php" >
+				<a href="index.php">
 					<img src="img/logo1.png" alt=""/>
 				</a>
 			</div>
 			<ul id="navigation" class="menu_deroulant">
-				<li class="lien">
+				<?php if ($_SERVER["PHP_SELF"] == "/nicody_galerie/index.php") { ?>
+					<li class="lien selected">
+				<?php }
+				else { ?>
+					<li class="lien">
+				<?php } ?>
 					<a href="index.php">Accueil</a>
 				</li>
 				<?php
 				    if (!isset($page["no_redirect"]) ){
 				?>
-				<li class="lien">
+				<?php if ($_SERVER["PHP_SELF"] == "/nicody_galerie/administration.php") { ?>
+					<li class="lien selected">
+				<?php }
+				else { ?>
+					<li class="lien">
+				<?php } ?>
 					<a href="administration.php"><?php echo $_SESSION["utilisateur"]; ?></a>
 					<!--<ul id="menuAdministration">
 						<li><a href="#">Gestion Utilisateur</a></li>
@@ -62,12 +72,9 @@
 					</ul>-->
 				</li>
 				<li class="lien">
-					<a href="include/logout.php" >
-						Déconnexion
-						<!-- <img id="logout" src="img/logout.png"/> -->
-					</a>
+					<a href="include/logout.php">Déconnexion</a>
 				</li>
-				<li>
+				<li class="recherche">
 					<input id="recherche" type="text" placeholder="Recherche..."/>
 					<ul id="rechercheItems"></ul>
 				</li>

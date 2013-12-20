@@ -7,15 +7,7 @@
 					(new Image()).src = this;
 			    });
 			}
-
-			precharger([
-				'img/utilisateur1/noel/noel1.jpg',
-				'img/utilisateur1/noel/noel2.jpg',
-				'img/utilisateur1/noel/noel3.jpg',
-				'img/utilisateur1/chats/chat1.jpg',
-				'img/utilisateur1/chats/chat2.jpg',
-				'img/utilisateur1/chats/chat3.jpg'
-			]);
+			precharger(parametres);
 
 			var nomCategorie = "tous";
 
@@ -52,7 +44,6 @@
 						precedCategorie = selectCategorie;
 						$(".conteneurImage").hide();
 						nomCategorie = $(this).text().toLowerCase().replace(/[èéêë]/g, "e");
-						// Pb IE au niveau du hasClass (fonctionne avec chaine en dur)
 						if (nomCategorie != "tous") {
 							$(".conteneurImage").each(function() {
 								if ($(this).parent().hasClass(nomCategorie)) {
@@ -104,7 +95,7 @@
 				// Taille de l'image se situant dans la pop-up
 				$("#popup img").css("width", $(window).width()*0.5);
 
-				// $("#popup").append('<p class="fermer"><img src="img/croix1.png"/></p>');
+				$("#popup").append('<p class="fermer"><img src="img/croix_popup.png"/></p>');
 
 				// Comportement des liens précédent et suivant
 				// Lien précédent
@@ -173,8 +164,8 @@
 				$("#popup").append('<p class="titre">' + img.parent().find('.titre').text() + '</span>');
 				$("#popup").append('<p class="description">' + img.parent().find('.description').text() + '</span>');
 				// Pour que le titre et la description s'adapte à la taille de la pop-up
-				$("#popup .titre").css('width', tailleMax);
-				$("#popup .description").css('width', tailleMax);
+				$("#popup .titre").css('width', tailleMax - 24);
+				$("#popup .description").css('width', tailleMax - 24);
 
 				// Passage à l'image précédente ou suivante en cliquant sur la moitié droite ou gauche de l'image
 				$("#popup img").click(function(event) {
@@ -202,7 +193,7 @@
 			});
 
 
-			$('body').on('click', '#fade', function() {
+			$('body').on('click', '#fade, #popup .fermer', function() {
 				$('#fade, #popup').fadeOut("fast");
 			});
 		});

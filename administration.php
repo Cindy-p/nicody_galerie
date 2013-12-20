@@ -18,20 +18,20 @@ include("include/connexion.php");
 <div id="corps">
 	<div id="listCategorie">
 		<ul>
-			<li><a href="#nouvelleCategorie">Nouvelle Catégorie</a></li>
+			<li><a href="#nouvelleCategorie">Nouvelle catégorie</a></li>
 			<?php 
 				$sql = "SELECT * FROM categorie WHERE idutilisateur = :idutilisateur ";
 				$stm = $pdo->prepare($sql);
 				$stm->execute(array(":idutilisateur" => $_SESSION['idutilisateur']));
-				while( $categorie = $stm->fetch(PDO::FETCH_ASSOC) ){
+				while($categorie = $stm->fetch(PDO::FETCH_ASSOC)){
 					echo "<li class='curseur'><a href='#categorie-".$categorie["idcategorie"]."' class='categorie-".$categorie["idcategorie"]."'>".$categorie["nom"]."</a></li>";
 				}
 			?>
 		</ul>
 		<div id="nouvelleCategorie">
-			<label for="nomCategorie">Nom de la Catégorie</label>
-			<input type="text" name="nomCategorie" id="nomCategorie" class="text ui-widget-content ui-corner-all">		
-			<button id="confirmNomCategorie" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">Valider</button>
+			<label for="nomCategorie">Nom de la catégorie</label>
+			<input type="text" name="nomCategorie" id="nomCategorie" class="text ui-widget-content ui-corner-all"><br/>
+			<button id="confirmNomCategorie" class="ui-button ui-corner-all ui-button-text-only">Valider</button>
 			<p class="validateTips"></p>
 		</div>
 		<?php 
@@ -47,7 +47,7 @@ include("include/connexion.php");
 						<img id='editCategorie-".$categorie["idcategorie"]."' src='img/editer.png' class='editCategorie center curseur'/>
 					</h2><br/>
 					<div id='formImage'></div>
-						<button class='nouvelleImage ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'>Nouvelle Image</button>
+						<button class='nouvelleImage ui-button ui-corner-all ui-button-text-only'>Nouvelle Image</button>
 						<br/><br/>
 						<ul class='listImage'>
 					";
