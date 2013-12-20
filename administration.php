@@ -60,7 +60,7 @@ include("include/connexion.php");
 		  					echo "<li id='idImage-".$image["idimage"]."' class='ui-state-default ui-corner-right'>
 		  							<img class='deplacerImage' src='img/move.png'/>
 		  							<span class='editImage'>".$image["nom"]."</span>
-		  							<img id='supprimerImage-".$image["idimage"]."' src='img/croix_blanche.png' class='supprimerImage right curseur'/>
+		  							<img id='supprimerImage-".$image["idimage"]."' src='img/croix.png' class='supprimerImage right curseur'/>
 		  						</li>";
 						}
 	  				echo "</ul>
