@@ -851,6 +851,12 @@ body .ui-tooltip {
 }
 .ui-tabs-nav .ui-state-hover {
 	background: #444444;
+}
+
+.ui-tabs-nav .ui-state-hover a,
+.ui-tabs-nav .ui-state-hover a:hover,
+.ui-tabs-nav .ui-state-hover a:link,
+.ui-tabs-nav .ui-state-hover a:visited {
 	color: #ffffff;
 }
 

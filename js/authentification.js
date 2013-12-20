@@ -134,7 +134,7 @@ $(document).ready(function(){
 		modal: true,
 		buttons: {
 			"Connexion à votre compte": {
-                text: "Connexion à votre compte",
+                text: "Connexion",
                 id: "validation",
                 click: function() {
                     var estValide = true;
@@ -145,8 +145,8 @@ $(document).ready(function(){
                     estValide = estValide && checkLength( password, "password", 6, 255 );
                     
                     // Test de format
-                    estValide = estValide && checkRegexp( login, /^[a-z]([0-9a-zA-Z_])+$/i, "Le login de passe peut être composé de chiffre, lettre minuscule et majuscule" );
-                    estValide = estValide && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Le mot de passe peut être composé de chiffre, lettre minuscule et majuscule" );
+                    estValide = estValide && checkRegexp( login, /^[a-z]([0-9a-zA-Z_])+$/i, "Le nom d'utilisateur peut seulement être composé de chiffres, de lettres minuscules et majuscules." );
+                    estValide = estValide && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Le mot de passe peut seulement être composé de chiffres, de lettres minuscules et majuscules." );
                     
                     // Tous les test valides
                     if ( estValide ) {

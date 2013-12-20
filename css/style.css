@@ -274,3 +274,30 @@ li #recherche {
 #listCategorie div {
 	text-align: left;
 }
+
+#nouvelleCategorie label{
+	display: inline-block;
+	width: 130px;
+}
+
+#formulaireImage label {
+	display: inline-block;
+	width: 90px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+#formulaireImage input[type=text], #formulaireImage #file, #formulaireImage textarea {
+	border: 1px solid #bbbbbb;
+}
+
+#formulaireImage input[type=text] {
+	width: 207px;
+	margin-bottom: 5px;
+}
+
+#formulaireImage textarea {
+	width: 217px;
+	margin-bottom: 5px;
+}
