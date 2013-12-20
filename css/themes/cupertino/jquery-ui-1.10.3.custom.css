@@ -758,6 +758,12 @@ button.ui-button::-moz-focus-inner {
 	padding: .5em 1em;
 	text-decoration: none;
 }
+.ui-tabs .ui-tabs-nav li a:hover {
+	color: #ffffff;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a:hover {
+	color: #444444;
+}
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
 	/*margin-bottom: -1px;*/
 	padding-bottom: 1px;
@@ -830,7 +836,7 @@ body .ui-tooltip {
 	font-weight: bold;
 }
 .ui-widget-header a {
-	color: #222222;
+	color: #444444;
 }
 
 /* Interaction states
@@ -857,7 +863,7 @@ body .ui-tooltip {
 .ui-tabs-nav .ui-state-hover a:hover,
 .ui-tabs-nav .ui-state-hover a:link,
 .ui-tabs-nav .ui-state-hover a:visited {
-	color: #ffffff;
+	/*color: #ffffff;*/
 }
 
 .ui-dialog-buttonset .ui-state-hover {
