@@ -32,10 +32,10 @@
 		$sql = "DELETE FROM categorie WHERE idcategorie = :idcategorie" ;
 		$stm = $pdo->prepare($sql);
 		$stm->execute(array(":idcategorie" => $idCategorie ));
-	
+			
 		// Validation de la transaction
 		$pdo->commit();
-	
+		
 		// Formatage du nom de dossier
     	$nomCategorie = format_dossier($nomCategorie);
 		if ( !clearDir(dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".$nomCategorie)){

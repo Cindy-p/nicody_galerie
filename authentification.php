@@ -22,10 +22,6 @@
 						<b>Identifiant *</b>
 					</label>
 					<input type="text" name="nouveauLogin" id="nouveauLogin" class="text ui-widget-content ui-corner-all">
-					<label for="email">
-						<b>E-mail *</b>
-					</label>
-					<input type="text" name="nouvelEmail" id="nouvelEmail" value="" class="text ui-widget-content ui-corner-all">
 					<label for="password">
 						<b>Mot de passe *</b>
 					</label>

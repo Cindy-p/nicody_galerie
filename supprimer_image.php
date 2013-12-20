@@ -39,7 +39,7 @@
 		$pdo->commit();
 	
 		// Suppresion de l'image en vrai
-		$supprimerImage = dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".$nomCategorie."/".$nomImage;
+		$supprimerImage = dirname(__FILE__)."/utilisateurs/".$_SESSION['utilisateur']."/".format_dossier($nomCategorie)."/".$nomImage;
 		
 		if ( !unlink($supprimerImage)){
 			$msg = "L'image ne s'est pas supprimée !".$supprimerImage;
