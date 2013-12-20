@@ -7,6 +7,8 @@ $(document).ready(function(){
 	});
 	
 	// Réalise le "formatage" de la page 
+
+
 	$("#galerie").genererGalerie(prechargement);
 	
 	// Signifie qu'aucun résultat n'est sélectionné au départ
@@ -102,7 +104,8 @@ $(document).ready(function(){
 
 	});
 	
-	//
+	// Selectionner un items à la souris
+
 	$("#rechercheItems").on("click",".autocompleteItem", function() {
 		$("#recherche").val($(this).html());
 		$("#rechercheItems").empty();
