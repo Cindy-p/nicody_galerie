@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	// Réalise le "formatage" de la page 
-	$("#galerie").genererGalerie();
+	//$("#galerie").genererGalerie();
 	
 	// Recherche dans les images
 	$("#recherche").on("keyup",function(){
@@ -62,7 +62,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	//
+	// Selectionner un items à la souris
 	$("#rechercheItems").on("click",".autocompleteItem",function(){
 		$("#recherche").val($(this).html());
 		$("#rechercheItems").empty();
